@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+/* Base styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f3f4f6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark body {
+  color: #fff;
+  background-color: #111827;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Layout */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+
+  font-weight: 500;
+  color: #fff;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  border: none;
+}
+
+.button-default {
+  background-color: #ef4444; /* Red (Error or destructive) */
+}
+
+.button:hover {
+  filter: brightness(90%);
+}
+
+.button-purple {
+  background-color: #8b5cf6; /* 보라색 */
+  margin-right: 1rem;
+}
+
+.button-blue {
+  background-color: #3b82f6; /* 파란색 */
+  margin-right: 1rem;
+}
+
+.button-active {
+  background-color: #10b981; /* Green (Active) */
+}
+
+.button-yellow {
+  background-color: #fbbf24; /* 노란색 */
+  margin-right: 1rem;
+}
+
+.button-green {
+  background-color: #10b981; /* 초록색 */
+  margin-right: 1rem;
+}
+
+.status-on .button {
+  background-color: #10b981; /* Green (Active) */
+}
+
+.status-off .button {
+  background-color: #ef4444; /* Red (Inactive) */
+}
+.button-icon {
+  margin-right: 0.5rem;
+}
+
+.dark .camera-view {
+  background-color: #374151;
+}
+
+/* Mood-fragrance mapping */
+.mood-fragrance-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.mood-fragrance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.mood-fragrance-item.happy {
+  background-color: #8b5cf6;
+}
+
+.mood-fragrance-item.sad {
+  background-color: #3b82f6;
+}
+
+.mood-fragrance-item.neutral {
+  background-color: #fbbf24;
+}
+
+.mood-fragrance-item.refreshed {
+  background-color: #10b981;
+}
+
+/* Footer */
+.footer {
+  background-color: #fff;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.dark .footer {
+  background-color: #1f2937;
+}
+
+.footer-content {
+  text-align: center;
+  color: #6b7280;
+}
+
+.dark .footer-content {
+  color: #9ca3af;
+}
+
+.mood-icon {
+  margin-right: 1rem;
+}
+.card-content {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mood-icon-wrapper {
+  text-align: center;
+  display: flex;
+}
+.pretext {
+  color: black;
+  margin-right: 3rem;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-contents {
+  display: flex;
+
+  width: 210px;
+  justify-content: end;
+}
+.current-mood {
+  color: black;
+}
+
+.mood-icon-happy {
+  color: black;
+}
+.mood-icon-sad {
+  color: black;
+}
+.mood-icon-neutral {
+  color: black;
+}
+.mood-icon-refreshed {
+  color: black;
 }
